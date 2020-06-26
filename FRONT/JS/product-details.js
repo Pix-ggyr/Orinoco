@@ -1,10 +1,7 @@
 // GET furnitures details one per page
 
 const getFurnitureID = window.location.search.substr(4);
-
 const srcPath = "http://localhost:3000/api/furniture/" + getFurnitureID;
-
-
 console.log(getFurnitureID);
 
 function getFurnitureDetails() {
