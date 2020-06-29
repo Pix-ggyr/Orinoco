@@ -9,14 +9,27 @@ function getFurnitureDetails() {
     getOneFurniture.onreadystatechange = function() {
         if (getFurnitureID.length > 0 && getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 200) {
             let Furniture = JSON.parse(getOneFurniture.response);
-            console.log(Furniture.price);
-            console.log(Furniture.name);
-            console.log(Furniture.description);
-            const furnitureDetails = document.getElementById("product-details");
-            let newFurnitureDetails = document.createElement("div");
-            furnitureDetails.appendChild(newFurnitureDetails);
-            newFurnitureDetails.classList.add("details-box");
-            newFurnitureDetails.innerHTML = `${Furniture.name} buy it for ${Furniture.price}$ !`
+            // console.log(Furniture);
+            const Name = document.getElementById("product-name");
+            let newName = document.createElement("h2");
+            Name.appendChild(newName);
+            newName.textContent = `${Furniture.name}`;
+            const Description = document.getElementById("product-specs");
+            let newDescription = document.createElement("p");
+            Description.appendChild(newDescription);
+            newDescription.innerHTML = `<h3>Description : <h3/><p>${Furniture.description}<p/>`
+            const Picture = document.getElementById("packshot");
+            let newPicture = document.createElement("div");
+            Picture.appendChild(newPicture);
+            newPicture.innerHTML = `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`;
+            const Price = document.getElementById("product-specs");
+            let newPrice = document.createElement("div");
+            Price.appendChild(newPrice);
+            newPrice.innerHTML = `<h3 id="product-price">Price : </h3><p>${Furniture.price}$</p>`;
+            const CartButton = document.getElementById("add-to-cart");
+            let newCartButton = document.createElement("button");
+            CartButton.appendChild(newCartButton);
+            newCartButton.innerHTML = `<a href="#" target="blank">Add to cart</a>`;
         }
         // else if (getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 404){
         //     alert("ce produit n'existe pas"); //ajouter une redirection à la page d'accueil du site

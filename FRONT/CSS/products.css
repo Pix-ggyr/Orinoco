@@ -1,0 +1,77 @@
+/*Essaie de mise en page avec seulement flexbox*/
+img {
+    height: 400px;
+    width: 480px;
+}
+
+button {
+    margin: 20px;
+    background-color: brown;
+    border-radius: 5px;
+    border: solid 2px brown;
+    height: 64px;
+    width: 160px;
+}
+
+button:hover {
+    background-color: cornflowerblue;
+    border: solid 2px cornflowerblue;
+    text-decoration: underline;
+}
+
+button a {
+    color: cornsilk;
+    font-size: 21px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-container {
+    width: auto;
+    height: 800px;
+    background-color: beige;
+}
+
+.page-title {
+    margin: 0px, 0px;
+}
+
+#product-name {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: brown;
+    width: 80%;
+}
+
+#product-name h2 {
+    color: cornsilk;
+}
+
+#main-description {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    background-color: darkgoldenrod;
+}
+
+#product-specs {
+    padding: 20px;
+}
+
+#packshot {
+    margin: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#add-to-cart {
+    width: 80%;
+    background-color: darkgoldenrod;
+    display: flex;
+    flex-flow: row nowrap;
+}
+

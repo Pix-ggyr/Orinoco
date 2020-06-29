@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Product details</title>
+    <link rel="stylesheet" href="css/flexcss.css">
 
     <!--Stylesheets & Bootstrap CDN-->
 
@@ -12,23 +13,19 @@
     <script src="JS/product-details.js"></script>
 </head>
 <body>
-    <main class="main container">
+    <main class="main-container">
         <div id="product-name">
-            <h2>Nom du produit</h2>
+            <h2>Table d'exemple</h2>
         </div>
-        <div id="main description">
+        <div id="main-description">
             <div id="packshot">
-                <img src="#" alt="picture of a table">
-            </div>
-            <div id="add-to-cart">
-                <button>
-                    <a href="#" target="blank">Add to cart</a>
-                </button>
+                <img src="./IMG/table.jpg" alt="picture of a table">
             </div>
             <div id="product-specs">
                 <h3>Description :</h3>
-                <p>Product description from array</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat eleifend nulla. Sed maximus at justo at dapibus. Curabitur eget justo ac quam pharetra luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque mattis turpis et lacinia malesuada. Aenean ac malesuada urna.</p>
                 <h3 id="product-price">Price :</h3>
+                <p>899$</p>
                 <h3>Choose your finition :</h3>
                 <form action="choice" aria-label="forumlaire de choix de la finition" title="choix">
                     <select name="varnish" id="finition">
@@ -38,6 +35,11 @@
                     </select>
                 </form>
             </div>
+        </div>
+        <div id="add-to-cart">
+            <button>
+                <a href="#" target="blank">Add to cart</a>
+            </button>
         </div>
     </main>
 </body>

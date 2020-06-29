@@ -1,0 +1,20 @@
+/* CSS du header */
+
+#header-container {
+    background-color: burlywood;
+    width: auto;
+    height: 123px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1#brand-name {
+    padding: 20px;
+}
+
+#navbar {
+    padding: 20px;
+    display: flex;
+}

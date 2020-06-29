@@ -5,51 +5,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Product details</title>
-
     <!--Stylesheets & Bootstrap CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <!--Scripts JS & Bootstrap scripts from CDN-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/products.css">
+    <!--Scripts JS-->
     <script src="JS/product-details.js"></script>
 </head>
-
 <body>
     <header>
-        <div id="header container">
-            <div class="row">
-                <div class="col-md-3 offset-md-1">
-                    <h1>Orinoco</h1>
-                </div>
-                <div class="col-md-8 d-flex align-items-center">
-                    <nav class="menu1">
-                        <a href="index.html">Catalogue</a>
-                        <a href="Produit.html">Produits</a>
-                        <a href="Panier.html">Mon panier</a>
-                    </nav>
-                </div>
-            </div>
+        <div id="header-container">
+            <h1 id="brand-name">Orinoco</h1>
+            <div id="navbar" aria-label="barre de navigation">
+                <nav class="menu1">
+                    <a href="index.html">Catalogue</a>
+                    <a href="Panier.html">Mon panier</a>
+                </nav>    
+            </div>        
+        </div>
     </header>
-    <main class="container-fluid">
-        <div class="row">
-            <div class="col-md-11 d-flex justify-content-center">
-                <h2>Détails d'un produit</h2>
-            </div>
+    <main class="main-container">
+        <div id="product-name"></div>
+        <div id="main-description">
+            <div id="packshot"></div>
+            <div id="product-specs"></div>   
         </div>
-        <div class="row">
-            <p>Si le script marche le tableau contenant tous les objects s'affiche en dessous.</p>
-            <div id="product-details" class="display col-md-12 d-flex justify-content-center align-items-center"></div>
-        </div>
+        <div id="add-to-cart"></div>      
     </main>
     <footer>
         <div id="footer">
@@ -58,7 +39,7 @@
             </div>
             <div class="mentions-légales">
                 <a href="#">Mentions légales</a>
-            </div>
+            </div>    
         </div>
     </footer>
 </body>
