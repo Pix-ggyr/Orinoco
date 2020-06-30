@@ -28,12 +28,49 @@ button a {
 
 .main-container {
     width: auto;
-    height: 800px;
+    height: auto;
     background-color: beige;
 }
 
 .page-title {
-    margin: 0px, 0px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+#items-display {
+    display: flex;
+    height: auto;
+    background-color: red;
+    flex-direction: column;
+}
+
+.new-furniture {
+    width: 60%;
+    background-color: blue;
+    margin: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.new-furniture img {
+    height: 200px;
+    width: 310px;
+    margin: 20px;
+}
+
+.new-furniture h2 {
+    margin: 20px;
+    color: cornsilk;
+    font-style: normal;
+}
+
+.new-furniture a {
+    text-decoration: none;
+}
+.new-furniture a :hover {
+    color: hotpink;
 }
 
 #product-name {
@@ -44,7 +81,7 @@ button a {
     align-items: center;
     align-self: center;
     background-color: brown;
-    width: 80%;
+    width: auto;
 }
 
 #product-name h2 {
@@ -54,7 +91,7 @@ button a {
 #main-description {
     display: flex;
     flex-flow: row nowrap;
-    width: 80%;
+    width: auto;
     background-color: darkgoldenrod;
 }
 
@@ -69,7 +106,7 @@ button a {
 }
 
 #add-to-cart {
-    width: 80%;
+    width: auto;
     background-color: darkgoldenrod;
     display: flex;
     flex-flow: row nowrap;

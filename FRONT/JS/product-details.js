@@ -9,7 +9,7 @@ function getFurnitureDetails() {
     getOneFurniture.onreadystatechange = function() {
         if (getFurnitureID.length > 0 && getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 200) {
             let Furniture = JSON.parse(getOneFurniture.response);
-            // console.log(Furniture);
+            console.log(Furniture);
             const Name = document.getElementById("product-name");
             let newName = document.createElement("h2");
             Name.appendChild(newName);
@@ -30,6 +30,18 @@ function getFurnitureDetails() {
             let newCartButton = document.createElement("button");
             CartButton.appendChild(newCartButton);
             newCartButton.innerHTML = `<a href="#" target="blank">Add to cart</a>`;
+            // Furniture.varnish.forEach(item => {
+            //     console.log(Furniture.varnish);
+            //     const finitionVarnish = document.getElementById("choose-finition");
+            //     let varnishChoice = document.createElement("select");
+            //     finitionVarnish.appendChild(varnishChoice);
+            //     varnishChoice.innerHTML = Furniture.varnish;
+            // });
+            const finitionVarnish = document.getElementById("choose-finition");
+            let varnishChoice = document.createElement("select");
+            finitionVarnish.appendChild(varnishChoice);
+            varnishChoice.innerHTML = Furniture.varnish(0) + Furniture.varnish(1) + Furniture.varnish(2);
+            console.log(varnishChoice);
         }
         // else if (getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 404){
         //     alert("ce produit n'existe pas"); //ajouter une redirection à la page d'accueil du site

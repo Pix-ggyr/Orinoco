@@ -10,8 +10,9 @@
     justify-content: space-between;
 }
 
-h1#brand-name {
+#brand-name h1 {
     padding: 20px;
+    font-size: 64px;
 }
 
 #navbar {
