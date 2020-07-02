@@ -1,4 +1,4 @@
-/*Essaie de mise en page avec seulement flexbox*/
+/*Mise en page avec seulement flexbox*/
 img {
     height: 450px;
     width: 531px;
@@ -17,7 +17,6 @@ button:hover {
     background-color: cornflowerblue;
     border: solid 2px cornflowerblue;
     text-transform: uppercase;
-    
 }
 
 button a {
@@ -28,7 +27,7 @@ button a {
 }
 
 .main-container {
-    width: auto;
+    width: 100%;
     height: auto;
     background-color: beige;
 }
@@ -48,16 +47,16 @@ button a {
 }
 
 #items-display {
-    display: flex;
-    width: auto;
+    display: grid;
+    width: 100%;
     height: auto;
-    flex-flow: column nowrap;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-gap: 30px;
 }
 
 .new-furniture {
-    width: 30%;
     height: 325px;
+    width: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: burlywood;
@@ -65,8 +64,10 @@ button a {
 }
 
 .new-furniture img {
-    height: 200px;
-    width: 310px;
+    height: 180px;
+    width: 260px;
+    object-fit: cover;
+    object-position: center;
     margin: 20px;
 }
 
@@ -119,7 +120,6 @@ button a {
     display: flex;
     flex-flow: column nowrap;
     justify-content: left;
-
 }
 
 #finition-form {
@@ -142,6 +142,5 @@ button a {
     width: auto;
     background-color: beige;
     order: 4;
-
 }
 

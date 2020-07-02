@@ -16,7 +16,7 @@ function searchAllFurnitures() {
                 newFurniture.classList.add("new-furniture");
                 const link = document.createElement("a");
                 newFurniture.appendChild(link); 
-                link.href = "Produit.html?id=" + item._id; //penser à ajouter la vérification de l'url pour voir s'il est correct.
+                link.href = "product.html?id=" + item._id; //penser à ajouter la vérification de l'url pour voir s'il est correct.
                 link.innerHTML = `<h2>${item.name}</h2><img src="${item.imageUrl}"/>`; 
             })
         }

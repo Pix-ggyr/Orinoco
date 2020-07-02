@@ -10,31 +10,64 @@ function getFurnitureDetails() {
         if (getFurnitureID.length > 0 && getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 200) {
             let Furniture = JSON.parse(getOneFurniture.response);
             console.log(Furniture);
-            const Name = document.getElementById("product-name"); let newName = document.createElement("h2");
-            Name.appendChild(newName);
-            newName.textContent = `${Furniture.name}`;
-            const Description = document.getElementById("product-specs"); let newDescription = document.createElement("p");
-            Description.appendChild(newDescription);
-            newDescription.innerHTML = `<h3>Description : <h3/><p>${Furniture.description}<p/>`
-            const Picture = document.getElementById("packshot"); let newPicture = document.createElement("div");
-            Picture.appendChild(newPicture);
-            newPicture.innerHTML = `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`;
-            const Price = document.getElementById("product-specs"); let newPrice = document.createElement("div");
-            Price.appendChild(newPrice);
-            newPrice.innerHTML = `<h3 id="product-price">Price : </h3><p>${Furniture.price}$</p>`;
-            const CartButton = document.getElementById("add-to-cart"); let newCartButton = document.createElement("button");
-            CartButton.appendChild(newCartButton);
-            newCartButton.innerHTML = `<a href="#" target="blank">Add to cart</a>`;
+            createElement({
+                containerId: "product-name", 
+                type: "h2", 
+                contentAttribution: {
+                    type: "innerHTML", 
+                    value: `${Furniture.name}`
+                }
+            });
+            createElement({
+                containerId: "product-specs", 
+                type: "p",
+                contentAttribution: {
+                    type: "innerHTML", 
+                    value: `<h3>Description : <h3/><p>${Furniture.description}<p/>`
+                }
+            });
+
+            createElement({
+                containerId: "packshot",
+                type:"div",
+                contentAttribution: {
+                    type:"innerHTML",
+                    value: `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`
+                }
+            });
+
+            createElement({
+                containerId: "product-specs",
+                type: "div",
+                contentAttribution: {
+                    type: "innerHTML",
+                    value: `<h3 id="product-price">Price : </h3><p>${Furniture.price}$</p>`,
+                }
+            });
+
+            createElement({
+                containerId: "add-to-cart",
+                type: "button",
+                contentAttribution: {
+                    type: "innerHTML",
+                    value: `<a href="#" target="blank">Add to cart</a>`,
+                }
+            });
+
             Furniture.varnish.forEach(Element => {
                 console.log(Element);
-                const finitionVarnish = document.getElementById("choose-finition");
-                let varnishChoice =  document.createElement("option");
-                finitionVarnish.appendChild(varnishChoice);
-                varnishChoice.innerHTML = `${Element} Varnish`;
+                createElement({
+                    containerId: "choose-finition",
+                    type: "option",
+                    contentAttribution: {
+                        type: "innerHTML",
+                        value: `${Element} Varnish`,
+                    }
+                });
             });
         }
         else if (getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 404){
-                alert("hm it seems we don't have this product in our warehouse"); //ajouter une redirection à la page d'accueil du site
+                alert("hm it seems we don't have this product in our warehouse"); //faire autrement avec la création de divs
             }
         };
         getOneFurniture.open("GET" , srcPath);
@@ -42,9 +75,10 @@ function getFurnitureDetails() {
     }
     getFurnitureDetails();
 
-
-    // const finitionVarnish = document.getElementById("product-specs");
-    // let varnishChoice = document.createElement("form");
-    // finitionVarnish.appendChild(varnishChoice);
-    // varnishChoice.innerHTML = `<select>Choisir : ${Furniture.varnish(0)}<select/><select>Choisir : ${Furniture.varnish(1)}<select/><select>Choisir : ${Furniture.varnish(2)}<select/>`;
-    // console.log(varnishChoice);
+    let createElement =  function(settings) {
+        const parent = document.getElementById(settings.containerId); 
+        const child = document.createElement(settings.type);
+        parent.appendChild(child);
+        child[settings.contentAttribution.type] = settings.contentAttribution.value;
+        return child;
+    }
