@@ -6,9 +6,17 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     height: 123px;
     width: 100%;
 }
 
+#footer a {
+    padding: 30px;
+}
+
+#footer a:hover {
+    color: cornflowerblue;
+    text-transform: uppercase;
+}
