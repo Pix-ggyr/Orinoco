@@ -50,7 +50,7 @@ function getFurnitureDetails() {
                 type: "button",
                 contentAttribution: {
                     type: "innerHTML",
-                    value: `<a href="#" target="blank">Add to cart</a>`,
+                    value: `<a href="cart.html" target="blank">Add to cart</a>`,
                 }
             });
 
@@ -67,7 +67,6 @@ function getFurnitureDetails() {
             });
         }
         else if (getOneFurniture.readyState == XMLHttpRequest.DONE && getOneFurniture.status == 404){
-                alert("hm it seems we don't have this product in our warehouse"); //faire autrement avec la création de divs
             }
         };
         getOneFurniture.open("GET" , srcPath);
@@ -75,10 +74,26 @@ function getFurnitureDetails() {
     }
     getFurnitureDetails();
 
-    let createElement =  function(settings) {
+    createElement =  function(settings) {
         const parent = document.getElementById(settings.containerId); 
         const child = document.createElement(settings.type);
         parent.appendChild(child);
         child[settings.contentAttribution.type] = settings.contentAttribution.value;
         return child;
     }
+
+    //eventlistener for shopping cart button
+
+    const cartButton = document.getElementById("add-to-cart");
+
+    cartButton.addEventListener('onclick' , function(event) {
+    console.log("hey mais ça ne marche pas !")   
+    event.createElement({
+           containerId : "my-cart",
+           type : "p",
+           contentAttribution : {
+               type : "innerHTML",
+               value : `Là c'est sensé marcher`           
+            }
+       })
+   });

@@ -1,4 +1,7 @@
 /* CSS du header */
+header {
+    z-index: 2;
+}
 
 #header-container {
     background-color: burlywood;
