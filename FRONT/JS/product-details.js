@@ -1,8 +1,10 @@
-// GET furnitures details one per page
+// Getting furniture ID path & API
 
 const getFurnitureID = window.location.search.substr(4);
 const srcPath = "http://localhost:3000/api/furniture/" + getFurnitureID;
 console.log(getFurnitureID);
+
+// GET furnitures details one per page
 
 function getFurnitureDetails() {
     console.log("début appel API");
@@ -13,6 +15,7 @@ function getFurnitureDetails() {
             console.log("appel API terminé, création bouton");
             let Furniture = JSON.parse(getOneFurniture.response);
             console.log(Furniture);
+            // Creation of the product name field
             createElement({
                 containerId: "product-name", 
                 type: "h2", 
@@ -21,6 +24,7 @@ function getFurnitureDetails() {
                     value: `${Furniture.name}`
                 }
             });
+            // Creation of the product description field
             createElement({
                 containerId: "product-specs", 
                 type: "p",
@@ -29,7 +33,7 @@ function getFurnitureDetails() {
                     value: `<h3>Description : <h3/><p>${Furniture.description}<p/>`
                 }
             });
-
+            // Creation of the product picture field
             createElement({
                 containerId: "packshot",
                 type:"div",
@@ -38,7 +42,7 @@ function getFurnitureDetails() {
                     value: `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`
                 }
             });
-
+            // Creation of the product price field
             createElement({
                 containerId: "product-specs",
                 type: "div",
@@ -47,16 +51,16 @@ function getFurnitureDetails() {
                     value: `<h3 id="product-price">Price : </h3><p>${Furniture.price}$</p>`,
                 }
             });
-
+            // Creation of the add-to-cart button
             createElement({
                 containerId: "add-to-cart",
                 type: "button",
                 contentAttribution: {
                     type: "innerHTML",
-                    value: `Add to cart`,
+                    value: `<h3>Add to cart`,
                 }
             });
-
+            // Creation of the product finition choice field
             createElement({
                containerId: "product-specs",
                type: "form",
@@ -68,7 +72,7 @@ function getFurnitureDetails() {
                 </form>`,  
                }  
             })
-
+            // Getting varnish values for finition choice
             Furniture.varnish.forEach(Element => {
                 console.log(Element);
                 createElement({
@@ -80,8 +84,7 @@ function getFurnitureDetails() {
                     }
                 });
             });
-
-            //eventlistener for shopping cart button
+            // Listening to cart and storing purchase history into localStorage
             console.log("ajout eventListener");
             const cartButton = document.getElementById("add-to-cart");
 
@@ -92,15 +95,16 @@ function getFurnitureDetails() {
             });
             
         }
+        // Setting error message when product ID is not in the database
         else if (getOneFurniture.status !== 200) {
-            console.log("oups cela n'existe pas");
+            console.log("le produit n'existe pas");
             createElement({
                 containerId: "product-page",
                 type: "div",
                 contentAttribution: {
                     type: "innerHTML",
                     value: `<h3>Oops, this product is not in our collection !<h3/>
-                    <button><a href="index.html" target="blank">Go back to homepage</a></button>`
+                    <button>Go back to homepage</a></button>`
                 }
             })
         }
@@ -110,13 +114,7 @@ function getFurnitureDetails() {
         getOneFurniture.send();
         console.log("requête envoyée");
     }
+    // Calling getFurnitureDetails function
     console.log("Appel getFurnitureDetails");
     getFurnitureDetails();
 
-    createElement =  function(settings) {
-        const parent = document.getElementById(settings.containerId); 
-        const child = document.createElement(settings.type);
-        parent.appendChild(child);
-        child[settings.contentAttribution.type] = settings.contentAttribution.value;
-        return child;
-    }
