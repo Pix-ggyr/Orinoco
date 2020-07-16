@@ -37,6 +37,7 @@ function getFurnitureDetails() {
             createElement({
                 containerId: "packshot",
                 type:"div",
+                id: "photo",
                 contentAttribution: {
                     type:"innerHTML",
                     value: `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`
