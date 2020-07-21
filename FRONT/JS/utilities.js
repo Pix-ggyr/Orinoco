@@ -15,7 +15,7 @@ createElement =  function(settings) {
 }
 
 
-// getSrcPath
+// getFullApiPath function
 
 getFurnitureID = function() {
     return window.location.search.substr(4);
@@ -25,6 +25,8 @@ const furnitureApiPath = "/api/furniture";
 getFullApiPath = function() {
     return baseUrl + furnitureApiPath;
 }
+
+// XHR & Promise for getting one product informations
 
 getProduct = function(id) {
     return new Promise(function(resolve , reject) {

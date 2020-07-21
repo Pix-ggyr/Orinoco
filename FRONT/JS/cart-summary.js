@@ -10,11 +10,8 @@ if(inMyCart.length === 0) {
 else {
     inMyCart.forEach(async item => {
         console.log("product : ", item);
-        console.log("Appel API lancé");
         let itemDetails = await getProduct(item);
         console.log(itemDetails);
-        console.log("Appel API terminé");
-        console.log(itemDetails.name)
     });
 }
 
