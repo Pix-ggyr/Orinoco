@@ -32,8 +32,13 @@ getProduct = function(id) {
     return new Promise(function(resolve , reject) {
         let itemRequest = new XMLHttpRequest();
         itemRequest.onreadystatechange = function() {
-            if (itemRequest.readyState === XMLHttpRequest.DONE && itemRequest.response.length > 0 && itemRequest.status === 200) {
+            if (itemRequest.readyState !== XMLHttpRequest.DONE) return;
+            if (itemRequest.response.length > 0 && itemRequest.status === 200) {
                 resolve(JSON.parse(itemRequest.response));   
+            }
+            else {
+                reject(new Error('this product does not exist'));
+
             }
         }
         itemRequest.open("GET" , getFullApiPath() + "/" + id);
