@@ -10,7 +10,9 @@ createElement =  function(settings) {
     if (settings.classList) {
         child.classList = settings.classList;
     }
-    child[settings.contentAttribution.type] = settings.contentAttribution.value;
+    if (settings.contentAttribution) {
+        child[settings.contentAttribution.type] = settings.contentAttribution.value;      
+    }
     return child;
 }
 
@@ -46,3 +48,20 @@ getProduct = function(id) {
     });
 }
 
+getProducts = function() {
+    return new Promise(function(resolve , reject) {
+        let allItemsRequest = new XMLHttpRequest();
+        allItemsRequest.onreadystatechange = function() {
+            if (allItemsRequest.readyState !== XMLHttpRequest.DONE) return;
+            if (allItemsRequest.status === 200) {
+                resolve(JSON.parse(allItemsRequest.response));
+            }
+            else {
+                reject(new Error('we cannot find the collection'));
+                console.log("une erreur est survenue");
+            }
+        }
+        allItemsRequest.open("GET" , getFullApiPath());
+        allItemsRequest.send();
+    });
+}

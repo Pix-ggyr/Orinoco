@@ -8,7 +8,7 @@ if(inMyCart.length === 0) {
     
 }
 else {
-    inMyCart.forEach(async item => {
+    inMyCart.forEach(async item => { //trouver comment boucler sur un objet et non un tableau
         console.log("product : ", item);
         let itemDetails = await getProduct(item);
         console.log(itemDetails);
@@ -21,22 +21,5 @@ else {
                 <td>${itemDetails.price}$</td>`
             }
         });
-
-        // createElement({
-        //     containerId: "selected-product",
-        //     type: "td",
-        //     contentAttribution: {
-        //         type: "innerHTML",
-        //         value: `${itemDetails.name}`
-        //     }
-        // });
-        // createElement({
-        //     containerId: "selected-product",
-        //     type: "td",
-        //     contentAttribution: {
-        //         type: "innerHTML",
-        //         value: `${itemDetails.price}$`
-        //     }
-        // });
     });
 }
