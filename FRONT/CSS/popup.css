@@ -1,0 +1,33 @@
+.confirmation-popup.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 90;
+  }
+
+  .confirmation-popup.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: beige;
+    box-shadow: black;
+    z-index: 91;
+    padding: 10px 10px;
+  }
+
+  .confirmation-popup.content>button.closePopup {
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  .confirmation-popup.content>div.added-alert {
+      text-align: center;
+      padding: 10px , 10px;
+      color: brown;
+      font-size: 20px ;
+  }
