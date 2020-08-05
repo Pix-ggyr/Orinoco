@@ -33,3 +33,8 @@ if (inMyCart.length !== 0) {
     }
   });
 }
+
+const purchaseBtn = document.querySelector('button#purchase-btn')[0];
+purchaseBtn.addEventListner('click', () => {
+  window.location.href = 'http://127.0.0.1:5500/FRONT/index.html';
+});

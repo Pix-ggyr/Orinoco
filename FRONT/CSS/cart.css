@@ -1,0 +1,67 @@
+table {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: brown;
+  color: cornsilk;
+  width: auto;
+  height: auto;
+  margin-top: 200px;
+  padding: 20px;
+  border-radius: 5px;  
+}
+
+th {
+  font-size: 20px;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-left: 15px;
+  padding-bottom: 18px;  
+  border-bottom: cornsilk 2px solid;
+}
+
+td {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  margin: 20px;
+  padding: 10px;
+}
+td.quantity {
+  text-align: center;
+}
+
+td.unitprice {
+  text-align: right;
+}
+
+td.subtotal {
+  text-align: right;
+}
+
+td#total-price {
+  font-size: 20px;
+  font-weight: bolder;
+  color:cornsilk;
+}
+
+button#purchase-btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: cornsilk;
+  margin-top: 20px;
+  background-color: brown;
+  border-radius: 5px;
+  border: solid 2px brown;
+  height: 64px;
+  width: 160px;
+}
+
+button#purchase-btn:hover {
+  background-color: cornflowerblue;
+  border: solid 2px cornflowerblue;
+  text-transform: uppercase;
+}

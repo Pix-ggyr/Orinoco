@@ -1,67 +1,72 @@
 <!doctype html>
 <html lang="fr">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <title>Shopping cart</title>
-        <!--Stylesheets-->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="CSS/body.css">
-        <link rel="stylesheet" href="CSS/header.css">
-        <link rel="stylesheet" href="CSS/footer.css">
-        <link rel="stylesheet" href="CSS/products.css">
-        <!--Scripts JS-->
-        <script src="JS/utilities.js"></script>
-        <script src="JS/cart-summary.js"></script>
-        
-    </head>
+		<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+				<title>Shopping cart</title>
+				<!--Stylesheets-->
+				<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+				<link rel="stylesheet" href="CSS/body.css">
+				<link rel="stylesheet" href="CSS/header.css">
+				<link rel="stylesheet" href="CSS/footer.css">
+				<link rel="stylesheet" href="CSS/products.css">
+				<link rel="stylesheet" href="CSS/cart.css">
+				<!--Scripts JS-->
+				<script src="JS/utilities.js"></script>
+				<script src="JS/cart-summary.js"></script>
+				
+		</head>
 
 <body>
-    <header>
-        <div id="header-container">
-            <div id="brand-name"><h1>Orinoco</h1></div>
-            <div id="navbar" aria-label="barre de navigation">
-                <nav class="menu1">
-                    <a href="index.html">Our collection</a>
-                    <a href="cart.html">Cart</a>
-                </nav>    
-            </div>        
-        </div>
-    </header>
-    <main class="container">
-        <div class="page-title">
-            <h2 class="title">Here is your shopping cart</h2>
-            <h3 class="subtitle">Please take the time to verify your cart before purchase</h3> 
-        </div>
-        <div id="my-cart">
-            <table id="cart-table">
-                <thead>
-                    <th>Designation</th>
-                    <th>Finition</th>
-                    <th>Quantity</th>
-                    <th>Unit price</th>
-                    <th>Sub-total</th>
-                </thead>
-                <tbody></tbody>                
-                <tfoot id="total-price">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>TOTAL : <span class="value">0</span>$</td>
-                </tfoot>
-            </table>
-        </div>
-    </main>
-    <footer>
-        <div id="footer">
-            <div class="contact">
-                <a href="mailto:chips@mail.com">Contact us</a>
-            </div>
-            <div class="mentions-légales">
-                <a href="#">Legals</a>
-            </div>    
-        </div>
-    </footer>
+		<header>
+				<div id="header-container">
+						<div id="brand-name"><h1>Orinoco</h1></div>
+						<div id="navbar" aria-label="barre de navigation">
+								<nav class="menu1">
+										<a href="index.html">Our collection</a>
+										<a href="cart.html">Cart</a>
+								</nav>    
+						</div>        
+				</div>
+		</header>
+		<main class="container">
+				<div class="page-title">
+						<h2 class="title">Here is your shopping cart</h2>
+						<h3 class="subtitle">Please take the time to verify your cart before purchase</h3> 
+				</div>
+				<div id="my-cart">
+						<table id="cart-table">
+								<thead>
+										<th>Designation</th>
+										<th>Finition</th>
+										<th>Quantity</th>
+										<th>Unit price</th>
+										<th>Sub-total</th>
+								</thead>
+								<tbody></tbody>                
+								<tfoot id="total-price">
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td id="total-price">TOTAL : <span class="value">0</span>$</td>
+								</tfoot>
+						</table>
+				</div>
+				<div>
+					<button id="purchase-btn">Purchase</button>
+				</div>
+				
+		</main>
+		<footer>
+				<div id="footer">
+						<div class="contact">
+								<a href="mailto:chips@mail.com">Contact us</a>
+						</div>
+						<div class="mentions-légales">
+								<a href="#">Legals</a>
+						</div>    
+				</div>
+		</footer>
 </body>
