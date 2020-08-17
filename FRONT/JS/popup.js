@@ -39,7 +39,6 @@ const confirmationPopup = (Furniture) => {
   shutPopup.addEventListener('click', shutThePopup);
 
   const goBackShopping = document.querySelector('.confirmation-popup.content>div.choice>button.shop');
-
   goBackShopping.addEventListener('click', shutThePopup);
 
   const goToCart = document.querySelector('.confirmation-popup.content>div.choice>button.go-to-cart');
