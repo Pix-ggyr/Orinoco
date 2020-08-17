@@ -1,5 +1,3 @@
-// Getting furniture ID path & API
-
 // eslint-disable-next-line no-unused-vars
 const srcPath = `http://localhost:3000/api/furniture/${window.getFurnitureID()}`;
 
