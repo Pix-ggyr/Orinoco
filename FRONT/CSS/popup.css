@@ -1,4 +1,4 @@
-.confirmation-popup.bg {
+.popup.bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     z-index: 90;
   }
 
-  .confirmation-popup.content {
+  .popup.content {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -20,7 +20,7 @@
     padding: 10px 10px;
   }
 
-  .confirmation-popup.content>button.shut {
+  .popup.content>button.shut {
     width: 30px;
     height: 30px;
     color: cornsilk;
@@ -29,7 +29,7 @@
     cursor: pointer;
   }
 
-  .confirmation-popup.content>div.added-alert>p {
+  .popup.content>div.added-alert>p {
     font-size: 24px;
     color: brown;
     display: flex;
@@ -75,4 +75,18 @@
     border: solid 2px cornflowerblue;
     color: white;
     text-transform: uppercase;
+  }
+
+  form { 
+    max-width:420px; 
+    margin:50px auto; 
+  }
+
+  .user-feedback {
+    width: 420px;
+    height: 40px;
+    border-radius: 2px;
+    margin-top: 20px;
+    background-color: white;
+    color: brown;
   }

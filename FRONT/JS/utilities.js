@@ -19,12 +19,12 @@ class Popup {
     window.createElement({
       containerId: 'body',
       type: 'div',
-      classList: 'confirmation-popup bg',
+      classList: 'popup bg',
     });
     window.createElement({
       containerId: 'body',
       type: 'div',
-      classList: 'confirmation-popup content',
+      classList: 'popup content',
       contentAttribution: {
         type: 'innerHTML',
         value: `

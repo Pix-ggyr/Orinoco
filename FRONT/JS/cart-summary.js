@@ -43,9 +43,12 @@ class CartSummary {
     new Popup({
       customContent: `<p>Fill up your informations to purchase</p>
       <div class="infos">
-        <form action="">
-          <input type="text" label="Your Name">John Doe</input>
-          <input type="text" label="Your Email">john.doe@gmail.com</input>
+        <form>      
+        <input name="name" type="text" class="user-feedback" placeholder="Name Firstname"/>   
+        <input name="email" type="text" class="user-feedback" placeholder="Email"/>
+        <input name="address-street" class="user-feedback" placeholder="Street"></input>
+        <input name="address-city" class="user-feedback" placeholder="City"></input>
+        <input name="zipcode" class="user-feedback" placeholder="ZIP Code"></input>
         </form>
       </div>`,
       actions: {
