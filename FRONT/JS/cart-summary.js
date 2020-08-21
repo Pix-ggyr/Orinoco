@@ -41,9 +41,12 @@ class CartSummary {
     // popup for buying confirmation
     // eslint-disable-next-line
     new Popup({
-      customContent: `<p>Fill up your informations to purchase</p>
+      customContent: `
+      <div class="main-info">
+        <p>Fill up your informations to purchase</p>
+      </div>  
       <div class="infos">
-        <form>      
+        <form class="user-infos">      
         <input name="name" type="text" class="user-feedback" placeholder="Name Firstname"/>   
         <input name="email" type="text" class="user-feedback" placeholder="Email"/>
         <input name="address-street" class="user-feedback" placeholder="Street"></input>
@@ -60,7 +63,7 @@ class CartSummary {
           text: 'Order',
           callback() {
             // va falloir faire mieux...
-            window.location.href = '/FRONT/confirmation.html';
+            window.location.href = 'http://127.0.0.1:5500//FRONT/confirmation.html';
           },
         },
       },

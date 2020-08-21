@@ -36,17 +36,17 @@ class Popup {
               </div>`,
       },
     });
-    const shutPopup = document.querySelector('.confirmation-popup.content>button.shut');
+    const shutPopup = document.querySelector('.popup.content>button.shut');
     shutPopup.addEventListener('click', () => { this.shutThePopup(); });
 
-    const firstButton = document.querySelector('.confirmation-popup.content>div.choice>button.first-btn');
+    const firstButton = document.querySelector('.popup.content>div.choice>button.first-btn');
     if (this.settings.actions.firstButton.callback === 'close') {
       firstButton.addEventListener('click', () => { this.shutThePopup(); });
     } else {
       firstButton.addEventListener('click', this.settings.actions.firstButton.callback);
     }
 
-    const secondButton = document.querySelector('.confirmation-popup.content>div.choice>button.second-btn');
+    const secondButton = document.querySelector('.popup.content>div.choice>button.second-btn');
     if (this.settings.actions.secondButton.callback === 'close') {
       secondButton.addEventListener('click', () => { this.shutThePopup(); });
     } else {
@@ -59,7 +59,7 @@ class Popup {
       const triggerButton = document.getElementById(this.settings.triggerButton.id);
       triggerButton.textContent = this.settings.triggerButton.initialValue;
     }
-    const popup = document.getElementsByClassName('confirmation-popup');
+    const popup = document.getElementsByClassName('popup');
     while (popup.length > 0) {
       popup[0].parentNode.removeChild(popup[0]);
     }

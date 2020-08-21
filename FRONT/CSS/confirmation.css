@@ -1,0 +1,13 @@
+h2.success {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: brown;
+}
+
+p.subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: brown;
+}
