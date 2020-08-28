@@ -16,7 +16,8 @@ class CartSummary {
               <td>${item.modifier}</td>
               <td class="quantity">${item.quantity}</td>
               <td class="unitprice">${itemDetails.price / 100}$</td>
-              <td class="subtotal">${(itemDetails.price / 100) * item.quantity}$</td>`,
+              <td class="subtotal">${(itemDetails.price / 100) * item.quantity}$</td>
+              <td class="remove"><button class="rmvItem">X</button></td>`,
       },
     });
 
@@ -40,38 +41,44 @@ class CartSummary {
     }
     // popup for buying confirmation
     // eslint-disable-next-line
-    new Popup({
-      customContent: `
-      <div class="main-info">
-        <p>Fill up your informations to purchase</p>
-      </div>  
-      <div class="infos">
-        <form class="user-infos">      
-        <input name="name" type="text" class="user-feedback" placeholder="Name Firstname"/>   
-        <input name="email" type="text" class="user-feedback" placeholder="Email"/>
-        <input name="address-street" class="user-feedback" placeholder="Street"></input>
-        <input name="address-city" class="user-feedback" placeholder="City"></input>
-        <input name="zipcode" class="user-feedback" placeholder="ZIP Code"></input>
-        </form>
-      </div>`,
-      actions: {
-        firstButton: {
-          text: 'Cancel',
-          callback: 'close',
-        },
-        secondButton: {
-          text: 'Order',
-          callback() {
-            // va falloir faire mieux...
-            window.location.href = 'http://127.0.0.1:5500//FRONT/confirmation.html';
+
+    const triggerButton = document.getElementById('purchase-btn');
+    triggerButton.addEventListener('click', () => {
+      // eslint-disable-next-line
+      new Popup({
+        customContent: `
+        <div class="main-info">
+          <p>Fill up your informations to purchase</p>
+        </div>  
+        <div class="infos">
+          <form class="user-infos">      
+          <input name="name" type="text" class="user-feedback" placeholder="Name Firstname"/>   
+          <input name="email" type="text" class="user-feedback" placeholder="Email"/>
+          <input name="address-street" class="user-feedback" placeholder="Street"></input>
+          <input name="address-city" class="user-feedback" placeholder="City"></input>
+          <input name="zipcode" class="user-feedback" placeholder="ZIP Code"></input>
+          </form>
+        </div>`,
+        actions: {
+          firstButton: {
+            text: 'Cancel',
+            callback: 'close',
+          },
+          secondButton: {
+            text: 'Order',
+            callback() {
+              // eslint-disable-next-line max-len
+              // au click stocker les informations client dans le local storage + appel API pour récupérer les informations du panier(post Order);
+              window.location.href = 'http://127.0.0.1:5500//FRONT/confirmation.html';
+            },
           },
         },
-      },
-      triggerButton: {
-        id: 'purchase-btn',
-        initialValue: 'Purchase',
-        triggeredValue: 'Please wait',
-      },
+        triggerButton: {
+          id: 'purchase-btn',
+          initialValue: 'Purchase',
+          triggeredValue: 'Please wait',
+        },
+      });
     });
   }
 }

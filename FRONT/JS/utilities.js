@@ -2,12 +2,7 @@
 class Popup {
   constructor(settings) {
     this.settings = settings;
-    this.listenTrigger();
-  }
-
-  listenTrigger() {
-    const triggerButton = document.getElementById(this.settings.triggerButton.id);
-    triggerButton.addEventListener('click', () => { this.displayPopup(); });
+    this.displayPopup();
   }
 
   // eslint-disable-next-line no-unused-vars
