@@ -118,3 +118,18 @@ window.getProducts = () => new Promise((resolve, reject) => {
   allItemsRequest.open('GET', getFullApiPath());
   allItemsRequest.send();
 });
+
+window.postOrder = (data) => new Promise((resolve, reject) => {
+  const post = new XMLHttpRequest();
+  post.onreadystatechange = () => {
+    if (post.readyState !== XMLHttpRequest.DONE) return;
+    if (post.status === 201) {
+      resolve(JSON.parse(post.responseText));
+    } else {
+      reject(new Error('pas ok'));
+    }
+  };
+  post.open('POST', `${getFullApiPath()}/order`);
+  post.setRequestHeader('Content-Type', 'application/json');
+  post.send(JSON.stringify(data));
+});
