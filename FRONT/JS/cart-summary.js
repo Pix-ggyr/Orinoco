@@ -103,6 +103,7 @@ class CartSummary {
               localStorage.setItem('total-price', total);
               localStorage.setItem('order-Id', order.orderId);
               window.location.href = 'http://127.0.0.1:5500//FRONT/confirmation.html';
+              this.clearCart();
             },
           },
         },
@@ -112,6 +113,12 @@ class CartSummary {
           triggeredValue: 'Please wait',
         },
       });
+    });
+    const clearAll = document.getElementById('clear-cart');
+    clearAll.addEventListener('click', () => {
+      console.log('coucou');
+      // eslint-disable-next-line
+      this.clearCart();
     });
   }
 }

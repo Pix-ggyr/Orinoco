@@ -12,7 +12,18 @@ class CartManager {
 
   clearOneLine(key) {
     console.log('retirer une ligne du panier', key);
-    // this.cartContent.localStorage.removeItem(key);
+    const cart = this.getCart();
+    if (cart.lenght === 0) {
+      console.log('le panier est vide');
+      return;
+    }
+    Object.keys(cart).forEach((clé) => {
+      if (Object.prototype.hasOwnProperty.call(cart, clé)) {
+        // eslint-disable-next-line no-unused-vars
+        const clearLine = delete cart[clé];
+      }
+    });
+    this.saveCart('cart');
     /*
     const cart = this.getCart();
     -> Dans panier vérifier si key existe
