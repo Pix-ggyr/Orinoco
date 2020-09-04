@@ -31,6 +31,7 @@ class CartManager {
   }
 
   static clearCart() {
-    localStorage.removeItem('cart');
+    const cart = CartManager.getCart();
+    localStorage.removeItem(cart);
   }
 }

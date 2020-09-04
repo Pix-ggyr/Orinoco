@@ -27,7 +27,6 @@ class CartSummary {
       clearButtons[i].addEventListener('click', (e) => {
         const productId = e.srcElement.dataset.productid;
         cartManager.clearOneLine(productId);
-        // refresh page
       });
     }
     const subTotals = (itemDetails.price / 100) * item.quantity;
@@ -117,7 +116,7 @@ class CartSummary {
     clearAll.addEventListener('click', () => {
       console.log('coucou');
       // eslint-disable-next-line
-      this.clearCart();
+      CartManager.clearCart();
     });
   }
 }

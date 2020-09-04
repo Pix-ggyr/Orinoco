@@ -1,147 +1,143 @@
-/*Mise en page avec seulement flexbox*/
+/* Mise en page avec seulement flexbox */
 img {
-    height: 450px;
-    width: 531px;
+  height: 450px;
+  width: 531px;
 }
 
 button {
-    margin-top: 20px;
-    color: cornsilk;
-    background-color: brown;
-    border-radius: 5px;
-    border: solid 2px brown;
-    height: 64px;
-    width: 160px;
+  margin-top: 20px;
+  color: var(--beige);
+  background-color: var(--dark-forest);
+  border-radius: 5px;
+  border: solid 2px var(--dark-forest);
+  height: 64px;
+  width: 160px;
 }
 
 button:hover {
-    background-color: cornflowerblue;
-    border: solid 2px cornflowerblue;
-    text-transform: uppercase;
+  background-color: var(--terra-cota);
+  border: solid 2px var(--terra-cota);
+  text-transform: uppercase;
 }
 
 button a {
-    color: beige;
-    font-size: 21px;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--beige);
+  font-size: 21px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .main-container {
-    width: 100%;
-    height: auto;
-    background-color: beige;
+  width: 100%;
+  height: auto;
+  background-color: var(--primary-white);
 }
 
 .page-title {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .title {
-    color: brown;
+  color: var(--dark-forest);
 }
 
 .subtitle {
-    color: brown;
+  color: var(--dark-forest);
 }
 
 #items-display {
-    display: grid;
-    width: 100%;
-    height: auto;
-    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
-    grid-gap: 30px;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
 }
 
 .new-furniture {
-    height: 325px;
-    width: 300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: burlywood;
-    text-align: center;
+  height: 325px;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--olive);
+  text-align: center;
 }
 
 .new-furniture img {
-    height: 180px;
-    width: 260px;
-    object-fit: cover;
-    object-position: center;
-    margin: 20px;
+  height: 180px;
+  width: 260px;
+  object-fit: cover;
+  object-position: center;
+  margin: 20px;
 }
 
 .new-furniture h2 {
-    margin: 20px;
-    color: brown;
-    font-style: normal;
+  margin: 20px;
+  color: var(--dark-forest);
+  font-style: normal;
 }
 
 .new-furniture a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 .new-furniture a :hover {
-    color: cornflowerblue;
-    text-transform: uppercase;
+  color: var(--terra-cota);
+  text-transform: uppercase;
 }
 
 #product-name {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    background-color: brown;
-    width: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-forest);
+  width: auto;
 }
 
 #product-name h2 {
-    color: beige;
+  color: var(--beige);
 }
 
 #main-description {
-    display: flex;
-    flex-flow: row nowrap;
-    width: auto;
-    background-color: beige;
+  display: flex;
+  flex-flow: row nowrap;
+  width: auto;
+  background-color: var(--primary-white);
+  margin-bottom: 20px;
 }
 
 #product-specs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: flex-start;
-    padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  padding-bottom: 20px;
 }
 
 #packshot {
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: left;
-}
-
-#finition-form {
-    width: 40%;
-    display: flex;
-    flex-flow: column;
-    order:3;
-    margin-top: 20px;   
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: left;
 }
 
 #choose-finition {
-    width: auto;
-    height: 32px;
-    background-color: white;
-    font-size: 14px;
-    font-weight: bold;
+  width: auto;
+  height: 32px;
+  border: solid var(--dark-forest);
+  border-radius: 5px;
+  background-color: var(--primary-white);
+  color: var(--dark-forest);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #add-to-cart {
-    width: auto;
-    background-color: beige;
-    order: 4;
+  width: auto;
+  background-color: var(--primary-white);
+  order: 4;
 }
-

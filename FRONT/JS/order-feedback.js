@@ -12,10 +12,13 @@ class OrderFeedback {
     console.log(totalPrice);
     window.createElement({
       containerId: 'order-summary',
-      type: 'p',
+      type: 'div',
+      id: 'order-infos',
       contentAttribution: {
         type: 'innerHTML',
-        value: `Your order n°${orderId} has been processed for a total amount of ${totalPrice}€`,
+        value: `
+        <p>Your order n° : <span>n°${orderId}</span>
+        Total price amount : <span>${totalPrice}</span>$</p>`,
       },
     });
   }

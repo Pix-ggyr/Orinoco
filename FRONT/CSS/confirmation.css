@@ -2,12 +2,34 @@ h2.success {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: brown;
+  color: var(--dark-forest);
 }
 
 p.subtitle {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: brown;
+  color: var(--dark-forest);
+}
+
+div#order-infos {
+  width: auto;
+  display: flex;
+  left: 50%;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-content: center;
+  color: var(--dark-forest);
+}
+
+div#order-infos > p {
+  margin: 10px;
+}
+
+div#order-infos > p > span {
+  color: var(--terra-cota);
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-right: 4px;
+  margin-left: 4px;
 }
