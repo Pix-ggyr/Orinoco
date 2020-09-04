@@ -10,27 +10,24 @@ class CartManager {
     return cartContent;
   }
 
+  // eslint-disable-next-line
   clearOneLine(key) {
     console.log('retirer une ligne du panier', key);
-    const cart = this.getCart();
-    if (cart.lenght === 0) {
-      console.log('le panier est vide');
-      return;
-    }
-    Object.keys(cart).forEach((clé) => {
-      if (Object.prototype.hasOwnProperty.call(cart, clé)) {
-        // eslint-disable-next-line no-unused-vars
-        const clearLine = delete cart[clé];
+    const cart = CartManager.getCart();
+    if (cart[key] === 0) return console.log('key does not exist');
+    Object.keys(cart).forEach((clef) => {
+      if (Object.prototype.hasOwnProperty.call(cart, clef)) {
+        if (clef === key) {
+          if (cart[key].quantity === 1) {
+            delete cart[key];
+          } else {
+            cart[key].quantity -= 1;
+          }
+        }
       }
     });
-    this.saveCart('cart');
-    /*
-    const cart = this.getCart();
-    -> Dans panier vérifier si key existe
-    -> Si oui, retirer la clé key du panier (delete cart[key])
-    this.saveCart('cart');
-    */
-    console.log(this.cartContent);
+    CartManager.saveCart(cart);
+    window.location.reload();
   }
 
   static clearCart() {

@@ -103,7 +103,6 @@ class CartSummary {
               localStorage.setItem('total-price', total);
               localStorage.setItem('order-Id', order.orderId);
               window.location.href = 'http://127.0.0.1:5500//FRONT/confirmation.html';
-              this.clearCart();
             },
           },
         },
