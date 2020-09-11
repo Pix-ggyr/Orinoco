@@ -1,65 +1,127 @@
-/* CSS du header */
-header {
-  width: 100%;
-  z-index: 2;
-}
+/* Custom header */
 
-.menu1 a {
-  padding: 10px;
-}
-
-.menu1 a:hover {
-  color: var(--terra-cota);
-  text-transform: uppercase;
-}
-
-#brand-name > h1 > a {
-  font-family: "Quicksand", sans-serif;
-  font-size: 62px;
-  color: var(--dark-forest);
-}
-
-#header-container {
-  right: 0;
-  left: 0;
-  top: 0;
-  background-color: var(--olive);
-  width: 100%;
-  height: 123px;
+.menu-container {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
+  height: 120px;
+  background-color: var(--olive);
+}
+.header {
+  background-color: var(--olive);
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.header li a {
+  color: var(--dark-forest);
+  padding: 20px 40px;
+  text-decoration: none;
+}
+.header li a:hover,
+.header .menu-btn:hover {
+  color: var(--terra-cota);
+  text-transform: uppercase;
+}
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1.5em;
+  padding: 12px 20px;
+  text-decoration: none;
 }
 
-#brand-name h1 {
-  padding: 20px;
-  font-size: 64px;
+/*Custom navbar with hamburger*/
+
+.header .menu {
+  clear: both;
+  height: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+.header .menu-icon .navicon {
+  background: var(--dark-forest);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: var(--dark-forest);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+/* Hamburger animation */
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 340px;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
 }
 
-.menu1 {
-  padding: 20px;
-}
-
-/* CSS du footer */
-
-#footer {
+/* Custom footer */
+footer {
   background-color: var(--olive);
   bottom: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  height: 123px;
+  position: absolute;
+  height: 100px;
   width: 100%;
 }
+
 /* stylelint-disable-next-line no-descending-specificity */
-#footer a {
+footer a {
   padding: 30px;
 }
 
-#footer a:hover {
+footer a:hover {
   color: var(--terra-cota);
   text-transform: uppercase;
 }
+

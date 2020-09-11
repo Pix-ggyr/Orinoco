@@ -7,13 +7,13 @@ class CartSummary {
   async printItemInCart(item) {
     const itemDetails = await window.getProduct(item.id);
     window.createElement({
-      containerId: 'cart-table',
+      containerId: 'cart-container',
       type: 'tr',
       contentAttribution: {
         type: 'innerHTML',
         // eslint-disable-next-line no-undef
-        value: `<td>${itemDetails.name}</td>
-              <td>${item.modifier}</td>
+        value: `<td class="designation">${itemDetails.name}</td>
+              <td class="modifier">${item.modifier}</td>
               <td class="quantity">${item.quantity}</td>
               <td class="unitprice">${itemDetails.price / 100}$</td>
               <td class="subtotal">${(itemDetails.price / 100) * item.quantity}$</td>

@@ -29,14 +29,17 @@ button a {
 
 .main-container {
   width: 100%;
+  display: flex;
+  margin-top: 40px;
+  flex-flow: column;
   height: auto;
   background-color: var(--primary-white);
 }
 
 .page-title {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 136px;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -51,6 +54,7 @@ button a {
   display: grid;
   width: 100%;
   height: auto;
+  justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
 }

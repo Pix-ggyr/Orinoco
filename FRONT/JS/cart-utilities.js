@@ -31,7 +31,7 @@ class CartManager {
   }
 
   static clearCart() {
-    const cart = CartManager.getCart();
-    localStorage.removeItem(cart);
+    localStorage.removeItem('cart');
+    window.location.reload();
   }
 }

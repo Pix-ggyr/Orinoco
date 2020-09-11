@@ -12,21 +12,22 @@
         <link rel="stylesheet" href="CSS/header-footer.css">
         <link rel="stylesheet" href="CSS/products.css">
         <link rel="stylesheet" href="CSS/popup.css">
-				<link rel="stylesheet" href="CSS/cart.css">			
+        <link rel="stylesheet" href="CSS/cart.css">
+        <link rel="stylesheet" href="CSS/responsive-design.css">			
 		</head>
 
 <body id="body">
-		<header>
-				<div id="header-container">
-          <div id="brand-name"><h1><a href="index.html">Orinoco</h1></div>
-          <div id="navbar" aria-label="barre de navigation">
-              <nav class="menu1">
-                  <a href="index.html">Our collection</a>
-                  <a href="cart.html">Cart</a>
-              </nav>    
-          </div>        
-				</div>
-		</header>
+  <div class="menu-container">
+    <header class="header">
+              <a href="index.html" class="brandname">Orinoco</a>
+              <input type="checkbox" class="menu-btn" id="menu-btn">
+              <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+              <ul class="menu">
+                <li><a href="index.html">Our collection</a></li>
+                <li><a href="cart.html">Cart</a></li>
+              </ul>            
+      </header>
+  </div>  
 		<main class="container">
 				<div class="page-title">
 						<h2 class="title">Here is your shopping cart</h2>
@@ -42,7 +43,7 @@
                     <th>Sub-total</th>
                     <th>Remove</th>
 								</thead>
-								<tbody></tbody>                
+								<tbody id="cart-container"></tbody>                
 								<tfoot id="total-price">
 										<td></td>
 										<td></td>
@@ -59,14 +60,12 @@
 				
 		</main>
 		<footer>
-				<div id="footer">
-						<div class="contact">
-								<a href="mailto:chips@mail.com">Contact us</a>
-						</div>
-						<div class="mentions-légales">
-								<a href="#">Legals</a>
-						</div>    
-				</div>
+      <div class="contact">
+          <a href="mailto:chips@mail.com">Contact us</a>
+      </div>
+      <div class="mentions-légales">
+          <a href="#">Legals</a>
+      </div>    
     </footer>
     <!--Scripts JS-->
     <script src="JS/utilities.js"></script>
