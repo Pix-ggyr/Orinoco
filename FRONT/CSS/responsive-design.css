@@ -1,0 +1,200 @@
+/* Responsive */
+
+/* Generals */
+
+@media screen and (max-width: 768px) {
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  div#main-description {
+    display: flex;
+    flex-flow: column wrap;
+    width: auto;
+    left: 0;
+  }
+
+  div#photo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    left: 0;
+  }
+
+  div#photo > img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Homepage */
+
+@media only screen and (max-width: 480px) {
+
+  table#cart-table, 
+  table#cart-table > tbody,
+  table#cart-table > tbody > tr,
+  table#cart-table > tbody > tr > td {
+    display: block;
+  }
+
+  table#cart-table > thead  {
+    display: none;
+  }
+
+  table#cart-table > tbody > tr {
+    border-bottom: dashed 0.75px var(--dark-forest);
+    padding-top: 25px;
+  }
+
+  table#cart-table > tbody > tr > td {
+    text-align: left;
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: bold;
+  }
+
+  th {
+    font-size: 26px;
+    padding: 0;
+    margin: 0;
+  }
+
+  td {
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+  }
+
+  table#cart-table > tbody > tr > td:before {
+    font-weight: normal;
+    position: absolute;
+    top: -15px;
+    font-size: 15px;
+    color: var(--dark-forest);
+  }
+
+  table#cart-table > tbody > tr > td.designation:before {
+    content: "Designation";
+  }
+  table#cart-table > tbody > tr > td.modifier:before {
+    content: "Finition";
+  }
+  table#cart-table > tbody > tr > td.quantity:before {
+    content: "Quantity";
+  }
+  table#cart-table > tbody > tr > td.unitprice:before {
+    content: "Unit price";
+  }
+  table#cart-table > tbody > tr > td.subtotal:before {
+    content: "Sub-total";
+  }
+
+  table#cart-table > tbody > tr > td.remove > button {
+    width: 180px;
+    height: 40px;
+    border-radius: 4px;
+    color: var(--olive);
+    font-size: 0;
+    position: relative;
+    margin: 0;
+  }
+
+  table#cart-table > tbody > tr > td.remove > button:hover {
+    color: var(--terra-cota);
+  }
+
+  table#cart-table > tbody > tr > td.remove > button:before {
+    content: "Delete";
+    top: 50%;
+    left: 50%;
+    font-size: 22px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: var(--dark-forest);
+    font-family: "Quicksand", Arial, sans-serif;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header ul{
+      background-color: var(--olive);
+      display: flex;
+      flex-flow: column nowrap;
+  }
+
+  .brandname {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+  
+  .header li a {
+  padding: 10px;
+  }
+  
+  /* Cart */
+
+  th {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-bottom: 8px;
+}
+
+  td {
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  button#purchase-btn,
+  button#clear-cart {
+    height: 32px;
+    width: 80px;
+    font-size: 12px;
+  }
+
+  button#purchase-btn {
+    margin-left: 25px;
+  }
+  button#clear-cart {
+    margin-right: 25px;
+  }
+}  
+
+@media only screen and (min-width: 768px) {
+  .menu-container {
+    background: var(--olive);
+    height: 96px;
+    line-height: 60px;
+    width: 100%;
+  }
+  .header li {
+    float: left;
+  }
+
+  .brandname {
+    font-size: 60px;
+    margin-left: 20px;
+  }
+
+  .header li a {
+    font-size: 26px;
+    color: var(--dark-forest);
+    padding: 10px 10px;
+    margin-right: 20px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+    background-color: var(--olive);
+    height: auto;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
