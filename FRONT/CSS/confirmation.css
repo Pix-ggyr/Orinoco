@@ -1,3 +1,5 @@
+/* Confirmation styling */
+/* stylelint-disable a11y/media-prefers-color-scheme */
 h2.success {
   display: flex;
   flex-direction: row;

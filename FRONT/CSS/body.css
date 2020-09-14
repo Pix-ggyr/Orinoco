@@ -1,3 +1,5 @@
+/* Body styling */
+/* stylelint-disable a11y/media-prefers-color-scheme */
 body {
   background-color: var(--primary-white);
   min-height: calc(100vh - 100px);
