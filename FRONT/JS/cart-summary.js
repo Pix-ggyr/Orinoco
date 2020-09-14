@@ -30,7 +30,7 @@ class CartSummary {
       });
     }
     const subTotals = (itemDetails.price / 100) * item.quantity;
-    const totalElt = document.querySelector('table#cart-table>tfoot#total-price>tr>td>span.value');
+    const totalElt = document.querySelector('table#cart-table>tfoot>tr>td#total-price>span.value');
     let total = Number(totalElt.textContent);
     total += subTotals;
     totalElt.textContent = total;
@@ -114,7 +114,6 @@ class CartSummary {
     });
     const clearAll = document.getElementById('clear-cart');
     clearAll.addEventListener('click', () => {
-      console.log('coucou');
       // eslint-disable-next-line
       CartManager.clearCart();
     });

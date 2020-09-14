@@ -19,7 +19,7 @@ class Collection {
             value: `
               <a href="product.html?id=${item._id}">
                   <h2>${item.name}</h2>
-                  <img src="${item.imageUrl}"/>
+                  <img src="${item.imageUrl}" alt=" wood furniture ${item.name}"/>
               </a>`,
           },
         });

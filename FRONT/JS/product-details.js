@@ -20,7 +20,7 @@ class ProductDetails {
       // Creation of the product description field
       window.createElement({
         containerId: 'product-specs',
-        type: 'p',
+        type: 'div',
         contentAttribution: {
           type: 'innerHTML',
           // eslint-disable-next-line no-undef
@@ -35,7 +35,7 @@ class ProductDetails {
         contentAttribution: {
           type: 'innerHTML',
           // eslint-disable-next-line no-undef
-          value: `<img src="${Furniture.imageUrl}" alt="photo d'illustration du produit ${Furniture.name}">`,
+          value: `<img src="${Furniture.imageUrl}" alt="illustration picture of ${Furniture.name}">`,
         },
       });
       // Creation of the product price field
@@ -55,7 +55,7 @@ class ProductDetails {
         id: 'add-btn',
         contentAttribution: {
           type: 'innerHTML',
-          value: '<h3>Add to cart</h3>',
+          value: 'Add to cart',
         },
       });
       // Creation of the product finition choice field
