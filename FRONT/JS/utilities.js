@@ -1,5 +1,67 @@
-// createElement function based on POO
+// eslint-disable-next-line no-unused-vars
+class Popup {
+  constructor(settings) {
+    this.settings = settings;
+    this.displayPopup();
+  }
 
+  // eslint-disable-next-line no-unused-vars
+  displayPopup() {
+    if (this.settings.triggerButton.triggeredValue !== undefined) {
+      const triggerButton = document.getElementById(this.settings.triggerButton.id);
+      triggerButton.textContent = this.settings.triggerButton.triggeredValue;
+    }
+    window.createElement({
+      containerId: 'body',
+      type: 'div',
+      classList: 'popup bg',
+    });
+    window.createElement({
+      containerId: 'body',
+      type: 'div',
+      classList: 'popup content',
+      contentAttribution: {
+        type: 'innerHTML',
+        value: `
+              <button class="shut"> x </button>
+              ${this.settings.customContent}
+              <div class="choice">
+                <button class="first-btn">${this.settings.actions.firstButton.text}</button>
+                <button class="second-btn">${this.settings.actions.secondButton.text}</button>
+              </div>`,
+      },
+    });
+    const shutPopup = document.querySelector('.popup.content>button.shut');
+    shutPopup.addEventListener('click', () => { this.shutThePopup(); });
+
+    const firstButton = document.querySelector('.popup.content>div.choice>button.first-btn');
+    if (this.settings.actions.firstButton.callback === 'close') {
+      firstButton.addEventListener('click', () => { this.shutThePopup(); });
+    } else {
+      firstButton.addEventListener('click', this.settings.actions.firstButton.callback);
+    }
+
+    const secondButton = document.querySelector('.popup.content>div.choice>button.second-btn');
+    if (this.settings.actions.secondButton.callback === 'close') {
+      secondButton.addEventListener('click', () => { this.shutThePopup(); });
+    } else {
+      secondButton.addEventListener('click', this.settings.actions.secondButton.callback);
+    }
+  }
+
+  shutThePopup() {
+    if (this.settings.triggerButton.initialValue !== undefined) {
+      const triggerButton = document.getElementById(this.settings.triggerButton.id);
+      triggerButton.textContent = this.settings.triggerButton.initialValue;
+    }
+    const popup = document.getElementsByClassName('popup');
+    while (popup.length > 0) {
+      popup[0].parentNode.removeChild(popup[0]);
+    }
+  }
+}
+
+// createElement function based on object programing
 window.createElement = (settings) => {
   const parent = document.getElementById(settings.containerId);
   const child = document.createElement(settings.type);
@@ -17,15 +79,13 @@ window.createElement = (settings) => {
 };
 
 // getFullApiPath function
-
 // eslint-disable-next-line no-unused-vars
 window.getFurnitureID = () => window.location.search.substr(4);
 const baseUrl = 'http://localhost:3000';
 const furnitureApiPath = '/api/furniture';
 const getFullApiPath = () => baseUrl + furnitureApiPath;
 
-// XHR & Promise for getting one product informations
-
+// XHR & Promise for information page per product
 // eslint-disable-next-line no-unused-vars
 window.getProduct = (id) => new Promise((resolve, reject) => {
   const itemRequest = new XMLHttpRequest();
@@ -41,6 +101,7 @@ window.getProduct = (id) => new Promise((resolve, reject) => {
   itemRequest.send();
 });
 
+// XHR & Promise for all items display on the home page
 // eslint-disable-next-line no-unused-vars
 window.getProducts = () => new Promise((resolve, reject) => {
   const allItemsRequest = new XMLHttpRequest();
@@ -56,4 +117,19 @@ window.getProducts = () => new Promise((resolve, reject) => {
   };
   allItemsRequest.open('GET', getFullApiPath());
   allItemsRequest.send();
+});
+
+window.postOrder = (data) => new Promise((resolve, reject) => {
+  const post = new XMLHttpRequest();
+  post.onreadystatechange = () => {
+    if (post.readyState !== XMLHttpRequest.DONE) return;
+    if (post.status === 201) {
+      resolve(JSON.parse(post.responseText));
+    } else {
+      reject(new Error('pas ok'));
+    }
+  };
+  post.open('POST', `${getFullApiPath()}/order`);
+  post.setRequestHeader('Content-Type', 'application/json');
+  post.send(JSON.stringify(data));
 });

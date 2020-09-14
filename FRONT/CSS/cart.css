@@ -1,0 +1,111 @@
+/* Cart Styling */
+/* stylelint-disable a11y/media-prefers-color-scheme */
+table {
+  background-color: var(--olive);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 4px var(--dark-forest);
+  color: var(--dark-forest);
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+th {
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 20px;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+td {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  padding-top: 20px;
+  padding-right: 20px;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+td#total-price {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: left;
+  vertical-align: baseline;
+  color: var(--dark-forest);
+}
+
+button#purchase-btn {
+  margin-left: 100px;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--beige);
+  background-color: var(--dark-forest);
+  border-radius: 5px;
+  border: solid 2px var(--dark-forest);
+  height: 64px;
+  width: 160px;
+}
+
+button#purchase-btn:hover {
+  background-color: var(--terra-cota);
+  border: solid 2px var(--terra-cota);
+  text-transform: uppercase;
+}
+
+button#clear-cart {
+  margin-right: 100px;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--beige);
+  background-color: var(--dark-forest);
+  border-radius: 5px;
+  border: solid 2px var(--dark-forest);
+  height: 64px;
+  width: 160px;
+}
+
+button#clear-cart:hover {
+  background-color: var(--terra-cota);
+  border: solid 2px var(--terra-cota);
+  text-transform: uppercase;
+}
+/* stylelint-disable-next-line a11y/font-size-is-readable */
+button.rmvItem {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  color: var(--dark-forest);
+  font-size: 13px;
+  background-color: var(--olive);
+  border: solid 0.75px;
+  border-radius: 100%;
+  height: 23px;
+  width: 23px;
+}
+
+button.rmvItem:hover {
+  background-color: var(--terra-cota);
+  border: solid 2px var(--terra-cota);
+  border-radius: 100%;
+}
+
+#cart-table {
+  margin-bottom: 20px;
+}
+
+.clear-or-buy {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  width: max-content;
+}

@@ -3,16 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Product details</title>
+    <title>Shopping cart</title>
     <!--Stylesheets-->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/colors.css">
     <link rel="stylesheet" href="CSS/body.css">
     <link rel="stylesheet" href="CSS/header-footer.css">
-    <link rel="stylesheet" href="CSS/products.css">
-    <link rel="stylesheet" href="CSS/popup.css">
-    <link rel="stylesheet" href="CSS/responsive-design.css">
-
+    <link rel="stylesheet" href="CSS/confirmation.css">
+    <link rel="stylesheet" href="CSS/responsive-design.css">	
 </head>
 <body id="body">
   <div class="menu-container">
@@ -25,17 +23,13 @@
                 <li><a href="cart.html">Cart</a></li>
               </ul>            
       </header>
-  </div>  
-    <main class="main-container" id="product-page">
-        <div id="product-name"></div>
-        <div id="main-description">
-            <div id="packshot"></div>
-            <div id="product-specs">
-                <div id="add-to-cart"></div>      
-            </div>    
-        </div>
+  </div>  			
+		<main>
+      <h2 class="success">Your order has been purchased successfully !</h2>
+      <p class="subtitle">Please keep carefuly the order informations below</p>
+      <div id="order-summary"></div>
     </main>
-    <footer>
+		<footer>
       <div class="contact">
           <a href="mailto:chips@mail.com">Contact us</a>
       </div>
@@ -45,5 +39,5 @@
     </footer>
     <!--Scripts JS-->
     <script src="JS/utilities.js"></script>
-    <script src="JS/product-details.js"></script>
+    <script src="JS/order-feedback.js"></script>
 </body>
