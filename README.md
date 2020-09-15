@@ -1,9 +1,10 @@
-# Orinoco
+# Orinoco [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a0b5aaf6d6f04a47a30dcaae0e4f3d16)](https://app.codacy.com/manual/Pix-ggyr/ORINOCO?utm_source=github.com&utm_medium=referral&utm_content=Pix-ggyr/ORINOCO&utm_campaign=Badge_Grade_Dashboard)
 
-*Projet 5 formation Web developer Openclassrooms*
+# Openclassrooms parcours développeur web : Projet 5
 
-Création d'un site web e-commerce
+***Mission : Création d'un site e-commerce***
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a0b5aaf6d6f04a47a30dcaae0e4f3d16)](https://app.codacy.com/manual/Pix-ggyr/ORINOCO?utm_source=github.com&utm_medium=referral&utm_content=Pix-ggyr/ORINOCO&utm_campaign=Badge_Grade_Dashboard)
-
-
+**Axes de travail**
+- OOP javascript
+- XHR GET and POST
+- LocalStorage
