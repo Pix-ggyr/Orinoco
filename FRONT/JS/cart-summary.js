@@ -60,11 +60,11 @@ class CartSummary {
         </div>  
         <div class="infos">
           <form class="user-infos">
-          <input name="Firstname" type="text" class="user-feedback" placeholder="Firstname"/>      
-          <input name="Lastname" type="text" class="user-feedback" placeholder="Lastname"/>   
-          <input name="email" type="text" class="user-feedback" placeholder="Email"/>
-          <input name="address-street" class="user-feedback" placeholder="Street"></input>
-          <input name="address-city" class="user-feedback" placeholder="City"></input>
+          <input name="Firstname" type="text" class="user-feedback" required placeholder="Firstname"></input>      
+          <input name="Lastname" type="text" class="user-feedback" required placeholder="Lastname"></input>   
+          <input name="email" type="email" class="user-feedback" required placeholder="Email"/></input>
+          <input name="address-street" class="user-feedback" required placeholder="Street"></input>
+          <input name="address-city" class="user-feedback" required placeholder="City"></input>
           </form>
         </div>`,
         actions: {
@@ -97,7 +97,7 @@ class CartSummary {
                 });
               }
               const order = await window.postOrder(data);
-              const totalElt = document.querySelector('table#cart-table>tfoot#total-price>tr>td>span.value');
+              const totalElt = document.querySelector('table#cart-table>tfoot>tr>td#total-price>span.value');
               const total = Number(totalElt.textContent);
               localStorage.setItem('total-price', total);
               localStorage.setItem('order-Id', order.orderId);
