@@ -52,6 +52,8 @@ class CartSummary {
 
     const triggerButton = document.getElementById('purchase-btn');
     triggerButton.addEventListener('click', () => {
+      // eslint-disable-next-line no-useless-escape
+      const emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
       // eslint-disable-next-line
       new Popup({
         customContent: `
@@ -62,7 +64,7 @@ class CartSummary {
           <form class="user-infos">
           <input name="Firstname" type="text" class="user-feedback" required placeholder="Firstname"></input>      
           <input name="Lastname" type="text" class="user-feedback" required placeholder="Lastname"></input>   
-          <input name="email" type="email" class="user-feedback" required placeholder="Email"/></input>
+          <input name="email" type="email" class="user-feedback" required placeholder="Email" pattern="${emailPattern}"/></input>
           <input name="address-street" class="user-feedback" required placeholder="Street"></input>
           <input name="address-city" class="user-feedback" required placeholder="City"></input>
           </form>
@@ -77,6 +79,11 @@ class CartSummary {
             async callback() {
               // eslint-disable-next-line max-len
               // au click stocker les informations client dans le local storage;
+              const email = document.querySelector('form.user-infos>input[name="email"]').value;
+              // eslint-disable-next-line no-useless-escape
+              const emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@[a-zA-Z\-0-9]+\.+[a-zA-Z]{2,}$/;
+              const emailValidation = emailValidationRegex.test(email);
+              if (!emailValidation) return;
               const data = {
                 contact: {
                   firstName: document.querySelector('form.user-infos>input[name="Firstname"]').value,
