@@ -5,9 +5,9 @@
 ***Mission : Création d'un site e-commerce***
 
 **Axes de travail**
-- OOP javascript
-- XHR GET and POST
-- LocalStorage
+  - OOP javascript
+  - XHR GET and POST
+  - LocalStorage
 
 **Plannification des tests**
 [EN](unit-tests.md) / [FR](tests-unitaires.md)
