@@ -8,3 +8,6 @@
 - OOP javascript
 - XHR GET and POST
 - LocalStorage
+
+**Plannification des tests**
+[EN](unit-tests.md) / [FR](tests-unitaires.md)
