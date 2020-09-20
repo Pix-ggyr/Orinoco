@@ -79,18 +79,18 @@ ___
     2. **Purchase** qui a deux fonctionnalités en simultané : 
 
       > Il affiche une popup demandant à l'utilisateur de remplir ses informations personnelles dans un formulaire, plus précisément : son nom, son prénom, son email, son adresse postale et sa ville. <br>
-      > Il envoi à l'API, une fois que l'utilisateur à cliqué sur le bouton "order", toutes les informations issues des champs du formulaire et permet la génération d'un identifiant de commande unique `order_id`.
+      > Il envoi à l'API, une fois que l'utilisateur à cliqué sur le bouton "**order**", toutes les informations issues des champs du formulaire et permet la génération d'un identifiant de commande unique `order_id`.
 
 
     Veillez à vérifier que la requête POST passe correctement et que le serveur reçoive bien un objet de contact contenant : nom, prénom, adresse, ville et email. Si ce n'est pas le cas, veuillez tester la fonctionnalité `windows.postOrder()` ici: 
     
-    https://github.com/Pix-ggyr/Orinoco/blob/2879f0805682c256e87c993fb2b27bff99e9524d/FRONT/JS/utilities.js#L122-L135
+     https://github.com/Pix-ggyr/Orinoco/blob/2879f0805682c256e87c993fb2b27bff99e9524d/FRONT/JS/utilities.js#L122-L135
     
     ainsi qu'ici:
     
     https://github.com/Pix-ggyr/Orinoco/blob/2879f0805682c256e87c993fb2b27bff99e9524d/FRONT/JS/cart-summary.js#L87-L106
 
-      ***Veillez à vérifier que l'identifiant de la commande apparaît bien dans le `localStorage` dans un objet `order_id`***
+    ***Veillez à vérifier que l'identifiant de la commande apparaît bien dans le `localStorage` dans un objet `order_id`***
 
   + Enfin, vérifiez que les informations utilisateur sont correctement vérifiées ici:
   
