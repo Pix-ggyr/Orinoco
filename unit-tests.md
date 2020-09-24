@@ -1,6 +1,6 @@
 # UNIT TESTS PLAN
 
-**Do not hesitate to use `alert()`, `error()` and `console.log`() along the ongoing tests**
+**Do not hesitate to use `alert()`, `error()` and `console.log()` along the ongoing tests**
 
 ___
 

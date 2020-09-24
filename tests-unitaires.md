@@ -1,6 +1,6 @@
 # PLAN DE TESTS UNITAIRES
 
-**N'hésitez pas à utiliser `alert()`, `error()` et `console.log`() au long des tests**
+**N'hésitez pas à utiliser `alert()`, `error()` et `console.log()` au long des tests**
 
 ___
 
