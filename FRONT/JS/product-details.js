@@ -88,8 +88,6 @@ class ProductDetails {
         evt.preventDefault();
         evt.stopPropagation();
 
-        // addToCartButton.textContent = 'Please wait...';
-
         const panier = JSON.parse(localStorage.getItem('cart')) || {};
         const modifier = document.getElementById('choose-finition').value;
         const item = panier[`${window.getFurnitureID()} ${modifier}`];
@@ -118,7 +116,6 @@ class ProductDetails {
             secondButton: {
               text: 'Go to cart',
               callback() {
-                // va falloir faire mieux...
                 window.location.href = 'http://127.0.0.1:5500/FRONT/cart.html';
               },
             },

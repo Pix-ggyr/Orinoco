@@ -126,7 +126,7 @@ window.postOrder = (data) => new Promise((resolve, reject) => {
     if (post.status === 201) {
       resolve(JSON.parse(post.responseText));
     } else {
-      reject(new Error('pas ok'));
+      reject(new Error('the request did not work'));
     }
   };
   post.open('POST', `${getFullApiPath()}/order`);
